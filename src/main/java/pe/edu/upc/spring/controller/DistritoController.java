@@ -1,5 +1,6 @@
 package pe.edu.upc.spring.controller;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sun.el.parser.ParseException;
 
+import pe.edu.upc.spring.model.Direccion;
 import pe.edu.upc.spring.model.Distrito;
 import pe.edu.upc.spring.service.IDistritoService;
 
@@ -94,5 +96,40 @@ public class DistritoController {
 		model.put("listaDistritos", dService.listar());
 		return "listDistrito";
 	}
+	@RequestMapping("/irBuscar")
+	public String irBuscar(Model model) 
+	{
+		model.addAttribute("distrito", new Distrito());
+		return "buscardistrito";
+	}	
+
+	@RequestMapping("/buscar")
+	
+	public String buscar(Map<String, Object> model, @ModelAttribute Distrito distrito ) 
+	throws ParseException
+	{
+		List<Distrito> listaDistritos;
+		
+		distrito.setNDistrito(distrito.getNDistrito()); //capturo lo que dijite en la cajita de texto
+		
+		listaDistritos = dService.buscarDistrito(distrito.getNDistrito());
+		
+		/*if (listaMascotas.isEmpty()) {
+			listaMascotas = pService.buscarPropietario(pet.getNamePet());
+		}
+		
+		if (listaMascotas.isEmpty()) {
+			listaMascotas = pService.buscarRaza(pet.getNamePet());
+		} */
+		
+		if (listaDistritos.isEmpty()) {
+			model.put("mensaje", "No existen coincidencias");
+		}
+		
+		model.put("listaDistritos", listaDistritos);
+		
+		return "buscardistritos";
+	}	
+	
 	
 }
