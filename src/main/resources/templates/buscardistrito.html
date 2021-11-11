@@ -4,7 +4,7 @@
 	<head>
 	
 		<meta charset="ISO-8859-1"></meta>
-		<title>Busqueda de Direcciones</title>
+		<title>Busqueda de Distritos</title>
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		
@@ -45,7 +45,7 @@
 	    	<table class="table table-bordered table-hover table-striped" id="tab_logic">
 	    						<thead>
 	    							<tr>
-	    								<th class="text-center">CÓDIGO</th>
+	    								<th class="text-center">CODIGO</th>
     									<th class="text-center">DISTRITO</th>
     									
     								
@@ -53,7 +53,7 @@
 	    						</thead>
 	    						<tbody>
 	    							<tr th:each="d: ${listaDistritos}">   <!-- th:each es un for-->
-	    								<td th:text="${d.CDiistrito}"></td>
+	    								<td th:text="${d.CDistrito}"></td>
 	    								<td th:text="${d.NDistrito}"></td>
 	    				
 	

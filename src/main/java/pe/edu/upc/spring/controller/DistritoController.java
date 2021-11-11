@@ -128,7 +128,7 @@ public class DistritoController {
 		
 		model.put("listaDistritos", listaDistritos);
 		
-		return "buscardistritos";
+		return "buscardistrito";
 	}	
 	
 	
