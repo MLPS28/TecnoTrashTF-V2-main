@@ -49,14 +49,13 @@
     									<th class="text-center">NUMERO CALLE</th>
     									<th class="text-center">DISTRITO</th>
     									<th class="text-center">TIPO DE VIA</th>
-    									<th class="text-center">OPERACION</th>
-    									<th class="text-center">OPERACION</th>
+    									
     								
 	    							</tr>
 	    						</thead>
 	    						<tbody>
 	    							<tr th:each="d: ${listaDirecciones}">   <!-- th:each es un for-->
-	    								<td th:text="${d.CDireccion}"></td>
+	    								
 	    								<td th:text="${d.NDireccion}"></td>
 	    								<td th:text="${d.NumDireccion}"></td>
 	    								<td th:text="${d.distrito.NDistrito}"></td>
