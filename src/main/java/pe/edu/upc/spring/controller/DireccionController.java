@@ -136,7 +136,7 @@ public class DireccionController {
 	public String irBuscar(Model model) 
 	{
 		model.addAttribute("direccion", new Direccion());
-		return "buscar";
+		return "buscardireccion";
 	}	
 
 	@RequestMapping("/buscar")
@@ -163,7 +163,7 @@ public class DireccionController {
 		
 		model.put("listaDirecciones", listaDirecciones);
 		
-		return "buscar";
+		return "buscardireccion";
 	}	
 	
 	
