@@ -53,11 +53,11 @@ public class ReporteServiceImpl implements IReporteService {
 
 	
 	
-	/*@Override
+	@Override
 	@Transactional(readOnly = true)
-	public List<Reporte> buscarDistrito(String NDistrito) {
-		return dReporte.buscarDistrito(NDistrito); 
-	}*/
+	public List<Reporte> buscarDireccion(String NDireccion) {
+		return dReporte.buscarDireccion(NDireccion); 
+	}
 	
 	
 

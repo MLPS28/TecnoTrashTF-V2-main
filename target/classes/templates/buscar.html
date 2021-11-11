@@ -25,15 +25,15 @@
     	<div class="container-fluid">
     		<div class="row clearfix">
     			<h1 class="btn btn-primary btn-md left-block">Busquedas</h1>
-    			<form th:action="@{/direccion/buscar}" method="post" th:object="${direccion}">
+    			<form th:action="@{/reporte/buscar}" method="post" th:object="${reporte}">
     			<div class="form-group">
     			<div class="col-sm-12">
-    				<input type="text" class="form-control" th:field="*{NDireccion}" id="nombre" placeholder="Ingrese el distrito que desea buscar">
+    				<input type="text" class="form-control" th:field="*{TDescripcion}" id="nombre" placeholder="Ingrese el distrito que desea buscar">
     				</input>
     				
     			<div align="left">
     				<button type="submit" class="btn btn-danger">Buscar</button>
-    				<a href="/direccion/listar" class="btn btn-danger">Cancelar</a>
+    				<a href="/reporte/listar" class="btn btn-danger">Cancelar</a>
     			</div>
     			</div>	    				
     			</div>
@@ -45,22 +45,22 @@
 	    	<table class="table table-bordered table-hover table-striped" id="tab_logic">
 	    						<thead>
 	    							<tr>
-	    								<th class="text-center">DIRECCION</th>
-    									<th class="text-center">NUMERO CALLE</th>
-    									<th class="text-center">DISTRITO</th>
-    									<th class="text-center">TIPO DE VIA</th>
-    									<th class="text-center">OPERACION</th>
-    									<th class="text-center">OPERACION</th>
+	    								<th class="text-center">DESCRIPCION</th>
+    									<th class="text-center">FECHA DE REPORTE</th>
+    									
+    									<th class="text-center">PUNTOS ACUMULADOS</th>
+    									<th class="text-center">DIRECCION DEL LUGAR A REPORTAR</th>
     								
 	    							</tr>
 	    						</thead>
 	    						<tbody>
-	    							<tr th:each="d: ${listaDirecciones}">   <!-- th:each es un for-->
-	    								<td th:text="${d.CDireccion}"></td>
-	    								<td th:text="${d.NDireccion}"></td>
-	    								<td th:text="${d.NumDireccion}"></td>
-	    								<td th:text="${d.distrito.NDistrito}"></td>
-	    								<td th:text="${d.tipovia.NTipoVia}"></td>
+	    							<tr th:each="d: ${listaReportes}">   <!-- th:each es un for-->
+	    								<td th:text="${d.TDescripcion}"></td>
+	    								<td th:text="${d.DFecha}"></td>
+	    								
+	    								<td th:text="${d.QPuntosReporte}"></td>
+	    								<td th:text="${d.direccion.NDireccion}"></td>
+	    								
 	
 	    							</tr>
 	    						</tbody>

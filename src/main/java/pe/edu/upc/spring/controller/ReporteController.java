@@ -1,6 +1,7 @@
 package pe.edu.upc.spring.controller;
 
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -125,31 +126,23 @@ public class ReporteController {
 		return "listReporte";
 	}	
 
-	@RequestMapping("/buscar")
+	@RequestMapping("/irBuscar")
 	public String irBuscar(Model model) 
 	{
 		model.addAttribute("reporte", new Reporte());
 		return "buscar";
 	}	
 
-	/*@RequestMapping("/buscar")
+	@RequestMapping("/buscar")
 	public String buscar(Map<String, Object> model, @ModelAttribute Reporte reporte ) 
 	throws ParseException
 	{
 		List<Reporte> listaReportes;
 		
 		reporte.setTDescripcion(reporte.getTDescripcion()); //capturo lo que dijite en la cajita de texto
-		
-		listaReportes = rService.buscarDistrito(reporte.getTDescripcion());
-		
-		/*if (listaMascotas.isEmpty()) {
-			listaMascotas = pService.buscarPropietario(pet.getNamePet());
-		}
-		
-		if (listaMascotas.isEmpty()) {
-			listaMascotas = pService.buscarRaza(pet.getNamePet());
-		} 
-		
+			
+		listaReportes = rService.buscarDireccion(reporte.getTDescripcion());
+
 		if (listaReportes.isEmpty()) {
 			model.put("mensaje", "No existen coincidencias");
 		}
@@ -157,7 +150,7 @@ public class ReporteController {
 		model.put("listaReportes", listaReportes);
 		
 		return "buscar";
-	}	*/
+	}	
 	
 	
 }
