@@ -13,7 +13,7 @@ public interface IReporteService {
 	public Optional<Reporte> buscarId(int CReporte);
 	public List<Reporte> listar();
 		
-	//public List<Reporte> buscarDistrito(String NDireccion);	
+	public List<Reporte> buscarDireccion(String NDireccion);	
 
 }
 
