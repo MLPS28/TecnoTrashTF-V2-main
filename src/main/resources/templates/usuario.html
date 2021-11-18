@@ -53,6 +53,13 @@
 								th:errors="*{NEmail}">
 						</div>
     				</div>
+    				<div class="form-group">
+    					<label for="email">PASSWORD:</label>
+    					<input type="text" class="form-control" th:field="*{NPassword}" id="password"></input>
+						<div 	class="alert alert-danger" th:if="${#fields.hasErrors('NPassword')}" 
+								th:errors="*{NPassword}">
+						</div>
+    				</div>
     				
  
     				

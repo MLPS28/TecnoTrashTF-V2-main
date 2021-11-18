@@ -92,7 +92,7 @@ public class UsuarioController {
 	@RequestMapping("/listar")
 	public String listar(Map<String, Object> model ) {
 		model.put("listaUsuarios", uService.listar());
-		return "listUser";
+		return "listUsuario";
 	}
 	
 }
