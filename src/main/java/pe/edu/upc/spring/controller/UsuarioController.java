@@ -1,5 +1,6 @@
 package pe.edu.upc.spring.controller;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sun.el.parser.ParseException;
 
+import pe.edu.upc.spring.model.Distrito;
 import pe.edu.upc.spring.model.Usuario;
 import pe.edu.upc.spring.service.IUsuarioService;
 
@@ -94,6 +96,32 @@ public class UsuarioController {
 		model.put("listaUsuarios", uService.listar());
 		return "listUsuario";
 	}
+	@RequestMapping("/irBuscar")
+	public String irBuscar(Model model) 
+	{
+		model.addAttribute("usuario", new Usuario());
+		return "buscarusuario";
+	}	
+
+	@RequestMapping("/buscar")
 	
+	public String buscar(Map<String, Object> model, @ModelAttribute Usuario usuario ) 
+	throws ParseException
+	{
+		List<Usuario> listaUsuarios;
+		
+		usuario.setNUsuario(usuario.getNUsuario()); //capturo lo que dijite en la cajita de texto
+		
+		listaUsuarios = uService.buscarUsuario(usuario.getNUsuario());
+		
+		
+		if (listaUsuarios.isEmpty()) {
+			model.put("mensaje", "No existen coincidencias");
+		}
+		
+		model.put("listaUsuarios", listaUsuarios);
+		
+		return "buscarusuario";
+	}	
 	
 }
