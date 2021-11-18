@@ -10,14 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Usuario")
+@Table(name="usuario")
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="CUsuario")
 	private int CUsuario;
 	
 	@Column(name="NUsuario", nullable = false, length = 40)

@@ -45,5 +45,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return dUsuario.findAll(); //devuelve todo en una lista
 	}
 
+	@Override
+	public List<Usuario> buscarUsuario(String NUsuario) {
+		
+		return dUsuario.buscaUsuarios(NUsuario);
+	}
+
 	
 }
