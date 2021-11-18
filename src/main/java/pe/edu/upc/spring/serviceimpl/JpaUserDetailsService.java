@@ -22,7 +22,7 @@ public class JpaUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private IUsuarioRepository usuarioRepository;
-	
+	/*
 	@Override
 	@Transactional(readOnly=true)
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
@@ -34,6 +34,12 @@ public class JpaUserDetailsService implements UserDetailsService {
 		}
 		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,authorities );
 		
+	}*/
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

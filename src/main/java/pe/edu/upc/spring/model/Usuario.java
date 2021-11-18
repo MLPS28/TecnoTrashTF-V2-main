@@ -17,32 +17,45 @@ public class Usuario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="CUsuario", nullable = false)
 	private int CUsuario;
 	
-	@Column(name="NUsuario", length=60, nullable=false)
+	@Column(name="NUsuario", nullable = false, length = 40)
 	private String NUsuario;
 	
-	@Column(name="NDNI", length=8, nullable=false)
+	@Column(name="NUsuarioAP", nullable = false, length = 30)
+	private String NUsuarioAP;
+	
+	@Column(name="NUsuarioAM", nullable = false, length = 30)
+	private String NUsuarioAM;
+	
+	@Column(name="NDNI", nullable = false, length = 8)
 	private int NDNI;
 	
-	@Column(name="NEmail", length=60, nullable=false)
+	@Column(name="NEmail", nullable = false, length = 45)
 	private String NEmail;
 	
-	@Column(name="QPuntos", nullable=false)
-	private int QPuntos;
+	@Column(name="NPassword", nullable = false, length = 30)
+	private String NPassword;
 	
+	@Column(name="QPuntos", nullable = false, length = 10)
+	private int QPuntos;
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int cUsuario, String nUsuario, int nDNI, String nEmail, int qPuntos) {
+	public Usuario(int cUsuario, String nUsuario, String nUsuarioAP, String nUsuarioAM, int nDNI, String nEmail,
+			String nPassword, int qPuntos) {
 		super();
 		CUsuario = cUsuario;
 		NUsuario = nUsuario;
+		NUsuarioAP = nUsuarioAP;
+		NUsuarioAM = nUsuarioAM;
 		NDNI = nDNI;
 		NEmail = nEmail;
+		NPassword = nPassword;
 		QPuntos = qPuntos;
 	}
 
@@ -62,6 +75,22 @@ public class Usuario implements Serializable {
 		NUsuario = nUsuario;
 	}
 
+	public String getNUsuarioAP() {
+		return NUsuarioAP;
+	}
+
+	public void setNUsuarioAP(String nUsuarioAP) {
+		NUsuarioAP = nUsuarioAP;
+	}
+
+	public String getNUsuarioAM() {
+		return NUsuarioAM;
+	}
+
+	public void setNUsuarioAM(String nUsuarioAM) {
+		NUsuarioAM = nUsuarioAM;
+	}
+
 	public int getNDNI() {
 		return NDNI;
 	}
@@ -78,6 +107,14 @@ public class Usuario implements Serializable {
 		NEmail = nEmail;
 	}
 
+	public String getNPassword() {
+		return NPassword;
+	}
+
+	public void setNPassword(String nPassword) {
+		NPassword = nPassword;
+	}
+
 	public int getQPuntos() {
 		return QPuntos;
 	}
@@ -85,5 +122,6 @@ public class Usuario implements Serializable {
 	public void setQPuntos(int qPuntos) {
 		QPuntos = qPuntos;
 	}
-		
+
+	
 }
