@@ -37,8 +37,8 @@ public class UsuarioController {
 
 	@RequestMapping("/irRegistrar")
 	public String irPaginaRegistrar(Model model) {
-		model.addAttribute("register", new Usuario());
-		return "register"; // "race" es una pagina del frontEnd para insertar y/o modificar
+		model.addAttribute("usuario", new Usuario());
+		return "usuario"; // "race" es una pagina del frontEnd para insertar y/o modificar
 	}
 	
 	@RequestMapping("/registrar")
@@ -46,11 +46,11 @@ public class UsuarioController {
 		throws ParseException
 	{
 		if (binRes.hasErrors())
-			return "register";
+			return "usuario";
 		else {
 			boolean flag = uService.grabar(objUsuario);
 			if (flag)
-				return "redirect:/register/listar";
+				return "redirect:/usuario/listar";
 			else {
 				model.addAttribute("mensaje", "Ocurrio un problema");
 				return "redirect:/usuario/irRegistrar";
@@ -94,5 +94,6 @@ public class UsuarioController {
 		model.put("listaUsuarios", uService.listar());
 		return "listUsuario";
 	}
+	
 	
 }
