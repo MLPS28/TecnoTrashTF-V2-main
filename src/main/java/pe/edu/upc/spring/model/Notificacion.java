@@ -19,7 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="Notificacion")
-public class Notificación implements Serializable {
+public class Notificacion implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -43,12 +43,12 @@ public class Notificación implements Serializable {
 	@JoinColumn(name="CReporte", nullable=false)
 	private Reporte reporte;
 
-	public Notificación() {
+	public Notificacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Notificación(int cNotificacion, String tDescripcion, Date dFechaNotificacion, Autoridad autoridad,
+	public Notificacion(int cNotificacion, String tDescripcion, Date dFechaNotificacion, Autoridad autoridad,
 			Reporte reporte) {
 		super();
 		CNotificacion = cNotificacion;
