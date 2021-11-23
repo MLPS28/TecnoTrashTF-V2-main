@@ -16,8 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.sun.el.parser.ParseException;
 
 import pe.edu.upc.spring.model.Autoridad;
-import pe.edu.upc.spring.model.Reporte;
 import pe.edu.upc.spring.model.Notificacion;
+import pe.edu.upc.spring.model.Reporte;
 import pe.edu.upc.spring.service.IAutoridadService;
 import pe.edu.upc.spring.service.IReporteService;
 import pe.edu.upc.spring.service.INotificacionService;
@@ -54,7 +54,7 @@ public class NotificacionController {
 		model.addAttribute("listaReportes", rService.listar());
 		model.addAttribute("reporte", new Reporte());
 		model.addAttribute("autoridad", new Autoridad());
-		model.addAttribute("notificacion", new Notificación());
+		model.addAttribute("notificacion", new Notificacion());
 		
 		return "notificacion"; 
 	}
@@ -84,7 +84,7 @@ public class NotificacionController {
 	public String modificar(@PathVariable int id, Model model, RedirectAttributes objRedir) 
 		throws ParseException
 	{
-		Optional<Notificación> objNotificacion = nService.listarId(id);
+		Optional<Notificacion> objNotificacion = nService.listarId(id);
 		if (objNotificacion == null) 
 		{
 			objRedir.addFlashAttribute("mensaje", "Ocurrio un problema");
@@ -125,7 +125,7 @@ public class NotificacionController {
 	}
 
 	@RequestMapping("/listarId")
-	public String listarId(Map<String, Object> model, @ModelAttribute Notificación notificacion ) 
+	public String listarId(Map<String, Object> model, @ModelAttribute Notificacion notificacion ) 
 	throws ParseException
 	{
 		nService.listarId(notificacion.getCNotificacion());

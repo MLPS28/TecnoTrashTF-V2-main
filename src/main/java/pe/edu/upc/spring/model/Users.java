@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario")
+@Table(name="usersecurity")
 
 public class Users implements Serializable {
 
