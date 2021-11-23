@@ -1,5 +1,6 @@
 package pe.edu.upc.spring.serviceimpl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,6 +58,12 @@ public class ReporteServiceImpl implements IReporteService {
 	@Transactional(readOnly = true)
 	public List<Reporte> buscarDireccion(String NDireccion) {
 		return dReporte.buscarDireccion(NDireccion); 
+	}
+
+	@Override
+	@Transactional
+	public List<Reporte> consultas(Date DFecha) {
+		return dReporte.consultafecha(DFecha);
 	}
 	
 	

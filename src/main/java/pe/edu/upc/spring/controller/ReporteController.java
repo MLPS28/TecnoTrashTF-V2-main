@@ -152,5 +152,30 @@ public class ReporteController {
 		return "buscar";
 	}	
 	
+	@RequestMapping("/irConsulta")
+	public String irConsultas(Model model) 
+	{
+		model.addAttribute("reporte", new Reporte());
+		return "buscar";
+	}
+	
+	@RequestMapping("/buscar")
+	public String buscar(Map<String, Object> model, @ModelAttribute Reporte reporte ) 
+	throws ParseException
+	{
+		List<Reporte> listaReportes;
+		
+		reporte.setTDescripcion(reporte.getTDescripcion()); //capturo lo que dijite en la cajita de texto
+			
+		listaReportes = rService.buscarDireccion(reporte.getTDescripcion());
+
+		if (listaReportes.isEmpty()) {
+			model.put("mensaje", "No existen coincidencias");
+		}
+		
+		model.put("listaReportes", listaReportes);
+		
+		return "buscar";
+	}	
 	
 }

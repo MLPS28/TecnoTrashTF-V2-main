@@ -1,5 +1,6 @@
 package pe.edu.upc.spring.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,8 +13,8 @@ public interface IReporteService {
 	public Optional<Reporte> listarId(int CReporte);
 	public Optional<Reporte> buscarId(int CReporte);
 	public List<Reporte> listar();
+	public List<Reporte> consultas(Date DFecha);
 		
-	public List<Reporte> buscarDireccion(String NDireccion);	
-
+	public List<Reporte> buscarDireccion(String NDireccion);
 }
 

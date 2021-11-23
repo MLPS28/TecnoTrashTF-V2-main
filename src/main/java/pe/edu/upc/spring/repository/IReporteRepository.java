@@ -1,5 +1,6 @@
 package pe.edu.upc.spring.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,6 +18,8 @@ public interface IReporteRepository extends JpaRepository<Reporte, Integer>{
 	@Query("from Reporte r where r.direccion.NDireccion like %:NDireccion%")
 	List<Reporte> buscarDireccion(@Param("NDireccion") String NDireccion);
 
-	
+	@Query("from Reporte r where r.direccion.DFecha like %:DFecha%")
+	List<Reporte> consultafecha(@Param("DFecha") Date DFecha);
+
 	
 }
