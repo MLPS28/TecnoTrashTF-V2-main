@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import pe.edu.upc.spring.model.Notificación;
+import pe.edu.upc.spring.model.Notificacion;
 import pe.edu.upc.spring.repository.INotificacionRepository;
 import pe.edu.upc.spring.service.INotificacionService;
 
@@ -19,8 +19,8 @@ public class NotificacionServiceImpl implements INotificacionService {
 	
 	@Override
 	@Transactional //los que no impliquen listados solo seran de tipo transactional
-	public boolean grabar(Notificación notificacion) {
-		Notificación objNotificacion = dNoti.save(notificacion);
+	public boolean grabar(Notificacion notificacion) {
+		Notificacion objNotificacion = dNoti.save(notificacion);
 		if (objNotificacion == null)
 			return false;
 		else
@@ -35,21 +35,23 @@ public class NotificacionServiceImpl implements INotificacionService {
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Optional<Notificación> buscarId(int CNotificacion) {
+	public Optional<Notificacion> buscarId(int CNotificacion) {
 		return dNoti.findById(CNotificacion);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Optional<Notificación> listarId(int CNotificacion) {
+	public Optional<Notificacion> listarId(int CNotificacion) {
 		return dNoti.findById(CNotificacion);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Notificación> listar() {
+	public List<Notificacion> listar() {
 		return dNoti.findAll(); //devuelve todo en una lista
 	}
+
+	
 
 	
 

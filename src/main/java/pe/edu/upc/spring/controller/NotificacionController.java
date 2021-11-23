@@ -17,7 +17,7 @@ import com.sun.el.parser.ParseException;
 
 import pe.edu.upc.spring.model.Autoridad;
 import pe.edu.upc.spring.model.Reporte;
-import pe.edu.upc.spring.model.Notificación;
+import pe.edu.upc.spring.model.Notificacion;
 import pe.edu.upc.spring.service.IAutoridadService;
 import pe.edu.upc.spring.service.IReporteService;
 import pe.edu.upc.spring.service.INotificacionService;
@@ -60,7 +60,7 @@ public class NotificacionController {
 	}
 
 	@RequestMapping("/registrar")
-	public String registrar(@ModelAttribute Notificación objNotificacion, BindingResult binRes, Model model) 
+	public String registrar(@ModelAttribute Notificacion objNotificacion, BindingResult binRes, Model model) 
 		throws ParseException
 	{
 		if (binRes.hasErrors())
